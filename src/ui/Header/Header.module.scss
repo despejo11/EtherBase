@@ -1,0 +1,93 @@
+@import '/index.scss';
+
+header {
+  @extend %glassEffect;
+  padding-block: 15px;
+  border-bottom: $br-c;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      z-index: 3;
+
+      img {
+        width: 60px;
+      }
+    }
+
+    .links {
+      display: flex;
+      gap: 30px;
+
+      a {
+        font-family: 'Changa One', sans-serif;
+        margin-bottom: 5px;
+        @include link($white, $white-h, $white-a, 27px);
+      }
+    }
+
+    .icons {
+      display: flex;
+      gap: 20px;
+
+      svg {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        color: $gray;
+        transition: $tr-btn;
+
+        &:hover {
+          color: $gray-h;
+          transform: scale(1.1);
+        }
+
+        &:active {
+          color: $gray-a;
+          transform: scale(1);
+        }
+
+        @media (max-width: 1000px) {
+          &:hover {
+            color: $gray;
+            transform: scale(1);
+          }
+
+          &:active {
+            color: $gray;
+          }
+        }
+      }
+    }
+
+    .menu {
+      display: none;
+
+      @media (max-width: 1000px) {
+        & {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  header {
+    .content {
+      .links {
+        display: none;
+      }
+
+      .icons {
+        display: none;
+      }
+    }
+  }
+}

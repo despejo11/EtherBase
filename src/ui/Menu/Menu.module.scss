@@ -1,0 +1,84 @@
+@import '/index.scss';
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  font-size: 40px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 3;
+  cursor: pointer;
+  color: $white;
+}
+
+.menu {
+  overflow: auto;
+  display: none;
+  opacity: 0;
+  background-image: url(/images/bg/menu.png);
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
+
+  .links {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: clamp(16.25rem, 6.25rem + 50vw, 37.5rem);
+    margin-top: 150px;
+    @extend %glassEffect;
+    padding: 20px;
+    border-radius: $br-r;
+    border: $br-c;
+
+    a {
+      margin-bottom: 8px;
+      font-family: 'Changa One', sans-serif;
+      margin-top: 10px;
+      width: 0;
+      color: $white;
+      font-size: clamp(1.25rem, 0.956rem + 1.47vw, 1.875rem);
+      text-decoration: none;
+    }
+
+    span {
+      @extend %letter;
+    }
+  }
+
+  .contact {
+    position: relative;
+    display: flex;
+    margin: auto;
+    width: clamp(16.25rem, 6.25rem + 50vw, 37.5rem);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    gap: 20px;
+    @extend %glassEffect;
+    padding: 20px;
+    border-radius: $br-r;
+    border: $br-c;
+
+    svg {
+      font-size: clamp(1.563rem, 1.268rem + 1.47vw, 2.188rem);
+      cursor: pointer;
+      color: $gray;
+      transition: $tr-btn;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    span {
+      @extend %letter;
+    }
+  }
+}

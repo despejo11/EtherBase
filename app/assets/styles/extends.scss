@@ -1,0 +1,20 @@
+%glassEffect {
+  background-color: rgba(100, 100, 100, 0.25);
+  box-shadow: $b-sh;
+  backdrop-filter: blur(9.5px);
+  -webkit-backdrop-filter: blur(9.5px);
+}
+
+%link {
+  transition: $tr-btn;
+  text-decoration: none;
+}
+
+%letter {
+  position: absolute;
+  right: 12px;
+  top: 0;
+  font-family: 'Smooch', cursive;
+  color: $gray;
+  font-size: 20px;
+}
