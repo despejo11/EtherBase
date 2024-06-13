@@ -4,8 +4,10 @@ header {
   @extend %glassEffect;
   padding-block: 15px;
   border-bottom: $br-c;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1;
 
   .content {
@@ -29,6 +31,12 @@ header {
         font-family: 'Changa One', sans-serif;
         margin-bottom: 5px;
         @include link($white, $white-h, $white-a, 27px);
+        letter-spacing: 0.5px;
+
+        span {
+          display: inline-block;
+          transition: transform 0.4s, opacity 0.4s;
+        }
       }
     }
 

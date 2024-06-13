@@ -1,14 +1,19 @@
 import styles from './Menu.module.scss'
-import { Link } from 'react-router-dom'
-import { useRef, useState, useEffect } from 'react'
+
+import { useNavigate } from 'react-router-dom'
+import { useRef, useState } from 'react'
 
 import { IoMenu, IoClose } from 'react-icons/io5'
 import { FaTelegram } from 'react-icons/fa6'
 import { BsTwitterX } from 'react-icons/bs'
 
 import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+gsap.registerPlugin(useGSAP)
 
 export default function Menu() {
+  const navigate = useNavigate()
+
   const [isOpen, setIsOpen] = useState(false)
 
   const menu = useRef(null)
@@ -19,7 +24,14 @@ export default function Menu() {
     setIsOpen((prevState) => !prevState)
   }
 
-  useEffect(() => {
+  const handleLinkClick = (path: string) => {
+    setIsOpen(false)
+    setTimeout(() => {
+      navigate(path)
+    }, 500)
+  }
+
+  useGSAP(() => {
     if (isOpen) {
       gsap.to(menu.current, { opacity: 1, duration: 0.5, display: 'block' })
       gsap.to(menuIcon.current, { opacity: 0, scale: 1.4, duration: 1 })
@@ -47,9 +59,21 @@ export default function Menu() {
       <div ref={menu} className={styles.menu}>
         <div className={styles.links}>
           <span>M</span>
-          <Link to='/'>Home</Link>
-          <Link to='/market'>Market</Link>
-          <Link to='/about'>About</Link>
+          <button onClick={() => handleLinkClick('/')} className={styles.link}>
+            Home
+          </button>
+          <button
+            onClick={() => handleLinkClick('/market')}
+            className={styles.link}
+          >
+            Market
+          </button>
+          <button
+            onClick={() => handleLinkClick('/about')}
+            className={styles.link}
+          >
+            About
+          </button>
         </div>
 
         <div className={styles.contact}>

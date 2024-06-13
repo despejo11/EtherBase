@@ -1,15 +1,13 @@
+import Header from '../../src/ui/Header/Header'
 import NewPage from './NewPage'
-import Home from '../../src/pages/Home'
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 export default function AppRouter() {
   return (
     <Router>
+      <Header />
       <NewPage />
-      <Routes>
-        <Route path='/' element={<Home />} />
-      </Routes>
     </Router>
   )
 }

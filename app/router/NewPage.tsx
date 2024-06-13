@@ -1,13 +1,49 @@
-import { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import Home from '../../src/pages/Home'
+import Error from '../../src/pages/Error'
+
+import { useEffect, useState } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
+
+import { AnimatePresence } from 'framer-motion'
 
 export default function NewPage() {
-  const { pathname } = useLocation()
+  const [shouldResetScroll, setShouldResetScroll] = useState(false)
+  const [scrollPosition, setScrollPosition] = useState(0)
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-    document.documentElement.style.overflow = 'auto'
-  }, [pathname])
+    if (shouldResetScroll) {
+      window.scrollTo(0, 0)
+      setShouldResetScroll(false)
+      document.documentElement.style.overflow = 'auto'
+    }
+  }, [shouldResetScroll])
 
-  return null
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  const location = useLocation()
+
+  return (
+    <AnimatePresence
+      onExitComplete={() => {
+        if (window.scrollY === scrollPosition) {
+          setShouldResetScroll(true)
+        }
+      }}
+    >
+      <Routes location={location} key={location.pathname}>
+        <Route path='/' element={<Home />} />
+        <Route path='*' element={<Error />} />
+      </Routes>
+    </AnimatePresence>
+  )
 }
