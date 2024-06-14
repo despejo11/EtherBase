@@ -1,0 +1,22 @@
+@import '/index.scss';
+
+.content {
+  padding-block: 5px;
+  border-block: $br-c;
+  @extend %glassEffect;
+  text-align: center;
+  position: relative;
+
+  .title {
+    font-family: 'Changa One', sans-serif;
+    font-size: clamp(2.125rem, 1.648rem + 2.39vw, 3.438rem);
+    color: $white;
+  }
+
+  .titled {
+    margin-top: 2px;
+    color: $gray;
+    font-family: 'Smooch', cursive;
+    font-size: clamp(1.25rem, 1.023rem + 1.14vw, 1.875rem);
+  }
+}

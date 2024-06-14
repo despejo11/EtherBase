@@ -1,0 +1,118 @@
+@import '/index.scss';
+
+footer {
+  margin-top: 200px;
+  padding-bottom: 50px;
+  background-image: url(/images/bg/footer.png);
+  background-size: cover;
+
+  .letter {
+    @extend %letter;
+  }
+
+  %icon {
+    svg {
+      width: clamp(1.25rem, 1.136rem + 0.57vw, 1.563rem);
+      height: clamp(1.25rem, 1.136rem + 0.57vw, 1.563rem);
+      cursor: pointer;
+      color: $white;
+      transition: $tr-btn;
+
+      &:hover {
+        color: $white-h;
+        transform: scale(1.1);
+      }
+
+      &:active {
+        color: $white-a;
+        transform: scale(1);
+      }
+
+      @media (max-width: 1000px) {
+        &:hover {
+          color: $white;
+          transform: scale(1);
+        }
+
+        &:active {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .content {
+    padding: 20px;
+    border: $br-c;
+    border-radius: $br-r;
+    @extend %glassEffect;
+    text-align: center;
+    position: relative;
+    width: clamp(10rem, 9.091rem + 4.55vw, 12.5rem);
+    margin: auto;
+    margin-top: 50px;
+
+    img {
+      padding-top: 5px;
+      width: clamp(3.75rem, 3.295rem + 2.27vw, 5rem);
+      margin: auto;
+    }
+
+    .icons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+
+      @extend %icon;
+    }
+  }
+
+  .scrollToTop {
+    padding: 12px;
+    border: $br-c;
+    border-radius: $br-r;
+    margin: auto;
+    margin-top: 80px;
+    width: clamp(4.25rem, 3.977rem + 1.36vw, 5rem);
+    @extend %glassEffect;
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      background-color: transparent;
+
+      @extend %icon;
+    }
+  }
+
+  .privacy {
+    padding: 20px;
+    border: $br-c;
+    border-radius: $br-r;
+    @extend %glassEffect;
+    text-align: center;
+    position: relative;
+    width: clamp(16.25rem, 8.523rem + 38.64vw, 37.5rem);
+    margin: auto;
+    margin-top: 20px;
+
+    p {
+      font-family: 'Changa One', sans-serif;
+      font-size: clamp(0.75rem, 0.659rem + 0.45vw, 1rem);
+      color: $white-a;
+      text-wrap: balance;
+
+      a {
+        @include link(
+          $gray,
+          $gray-h,
+          $gray-a,
+          clamp(0.75rem, 0.659rem + 0.45vw, 1rem)
+        );
+      }
+    }
+  }
+}

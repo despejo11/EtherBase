@@ -18,3 +18,38 @@
   color: $gray;
   font-size: 20px;
 }
+
+%titlePage {
+  padding-bottom: 50px;
+  user-select: none;
+  font-family: 'Freedom Standing';
+  text-align: center;
+  color: $gray;
+  mix-blend-mode: difference;
+}
+
+%card {
+  position: relative;
+  border: $br-c;
+  border-radius: $br-r;
+  padding: 20px;
+  @extend %glassEffect;
+
+  span {
+    @extend %letter;
+  }
+
+  .title {
+    font-family: 'Changa One', sans-serif;
+    font-size: clamp(1.438rem, 1.278rem + 0.8vw, 1.875rem);
+    color: $white;
+    margin-bottom: 20px;
+  }
+
+  .description {
+    font-family: 'Changa One', sans-serif;
+    font-size: clamp(0.813rem, 0.767rem + 0.23vw, 0.938rem);
+    color: $white-a;
+    text-wrap: balance;
+  }
+}

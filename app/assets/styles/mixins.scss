@@ -21,3 +21,8 @@
     }
   }
 }
+
+@mixin titlePage($font-size) {
+  @extend %titlePage;
+  font-size: #{$font-size};
+}

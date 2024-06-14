@@ -1,5 +1,6 @@
-import Home from '../../src/pages/Home'
 import Error from '../../src/pages/Error'
+import Home from '../../src/pages/Home'
+import About from '../../src/pages/About'
 
 import { useEffect, useState } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
@@ -41,8 +42,9 @@ export default function NewPage() {
       }}
     >
       <Routes location={location} key={location.pathname}>
-        <Route path='/' element={<Home />} />
         <Route path='*' element={<Error />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
       </Routes>
     </AnimatePresence>
   )

@@ -1,0 +1,30 @@
+@import '/index.scss';
+
+.content {
+  padding-top: 150px;
+  background-image: url(/images/bg/main.png);
+  background-size: cover;
+
+  .titlePage {
+    @include titlePage(clamp(3.125rem, 0.17rem + 14.77vw, 11.25rem));
+  }
+
+  .cards {
+    width: clamp(16.25rem, 3.977rem + 61.36vw, 50rem);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    padding-bottom: 100px;
+
+    @media (max-width: 1000px) {
+      & {
+        gap: 90px;
+      }
+    }
+
+    .card {
+      @extend %card;
+    }
+  }
+}

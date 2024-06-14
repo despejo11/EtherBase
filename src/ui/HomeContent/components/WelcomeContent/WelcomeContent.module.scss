@@ -2,17 +2,10 @@
 
 .content {
   padding-top: 150px;
-  background-image: url(/images/bg/main.png);
-  background-size: cover;
+  margin-bottom: 100px;
 
   .titlePage {
-    margin-bottom: 50px;
-    user-select: none;
-    font-family: 'Freedom Standing';
-    font-size: clamp(2.5rem, -0.682rem + 15.91vw, 11.25rem);
-    text-align: center;
-    color: $gray;
-    mix-blend-mode: difference;
+    @include titlePage(clamp(2.5rem, -0.682rem + 15.91vw, 11.25rem));
   }
 
   .cards {
@@ -22,30 +15,8 @@
     gap: 90px;
 
     .card {
-      position: relative;
+      @extend %card;
       width: clamp(16.25rem, 15.114rem + 5.68vw, 19.375rem);
-      border: $br-c;
-      border-radius: $br-r;
-      padding: 20px;
-      @extend %glassEffect;
-
-      .title {
-        font-family: 'Changa One', sans-serif;
-        font-size: 30px;
-        color: $white;
-        margin-bottom: 20px;
-
-        span {
-          @extend %letter;
-        }
-      }
-
-      .description {
-        font-family: 'Changa One', sans-serif;
-        font-size: 15px;
-        color: $white-a;
-        text-wrap: balance;
-      }
     }
   }
 }

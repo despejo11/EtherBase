@@ -60,13 +60,12 @@
     display: flex;
     margin: auto;
     width: clamp(16.25rem, 6.25rem + 50vw, 37.5rem);
-    margin-top: 50px;
-    margin-bottom: 50px;
     gap: 20px;
     @extend %glassEffect;
     padding: 20px;
     border-radius: $br-r;
     border: $br-c;
+    margin-block: 50px;
 
     svg {
       font-size: clamp(1.563rem, 1.268rem + 1.47vw, 2.188rem);

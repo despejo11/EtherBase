@@ -1,14 +1,14 @@
 import styles from './ErrorContent.module.scss'
+import Stripe from '../../components/Stripe/Stripe'
 
 export default function ErrorContent() {
   return (
     <div className={styles.content}>
-      <p className={styles.title}>four hundred and four</p>
-
-      <div className={styles.titled}>
-        <p className={styles.description}>Oh no, you look lost!</p>
-        <p className={styles.errorNumber}>404</p>
+      <div className='container'>
+        <p className={styles.error}>four hundred and four</p>
       </div>
+
+      <Stripe title='404' titled='Oh no, you look lost' />
     </div>
   )
 }

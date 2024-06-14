@@ -8,9 +8,9 @@ export default function WelcomeContent() {
 
         <div className={styles.cards}>
           <div className={styles.card}>
-            <p className={styles.title}>
-              <span>R</span> Real Time Data
-            </p>
+            <span>R</span>
+
+            <p className={styles.title}>Real Time Data</p>
             <p className={styles.description}>
               Our platform ensures that you have access to live data that is
               updated every minute. You can get the latest trading prices,
@@ -23,9 +23,9 @@ export default function WelcomeContent() {
           </div>
 
           <div className={styles.card}>
-            <p className={styles.title}>
-              <span>W</span> Welcome to Us
-            </p>
+            <span>W</span>
+
+            <p className={styles.title}>Welcome to Us</p>
             <p className={styles.description}>
               We provide you with the most accurate and up-to-date information
               on all things crypto. Whether you're a seasoned trader or just
@@ -38,9 +38,9 @@ export default function WelcomeContent() {
           </div>
 
           <div className={styles.card}>
-            <p className={styles.title}>
-              <span>E</span> Explore and Learn
-            </p>
+            <span>E</span>
+
+            <p className={styles.title}>Explore and Learn</p>
             <p className={styles.description}>
               We believe in empowering our users with knowledge. Explore
               detailed information about individual cryptocurrencies, including

@@ -5,36 +5,8 @@
   background-image: url(/images/bg/main.png);
   background-size: cover;
 
-  .title {
-    user-select: none;
-    font-family: 'Freedom Standing';
-    font-size: clamp(2.188rem, 0.938rem + 6.25vw, 5.625rem);
-    text-align: center;
-    color: $gray;
-    mix-blend-mode: difference;
-    padding-bottom: 50px;
+  .error {
+    @include titlePage(clamp(1.875rem, 0.625rem + 6.25vw, 5.313rem));
     padding-inline: 25px;
-  }
-}
-
-.titled {
-  padding-top: 20px;
-  padding-bottom: 5px;
-  border-block: $br-c;
-  @extend %glassEffect;
-  text-align: center;
-  position: relative;
-
-  .description {
-    font-family: 'Changa One', sans-serif;
-    font-size: clamp(1.688rem, 0.938rem + 3.75vw, 3.75rem);
-    color: $white;
-  }
-
-  .errorNumber {
-    margin-top: 2px;
-    color: $gray;
-    font-family: 'Smooch', cursive;
-    font-size: clamp(1.563rem, 1.381rem + 0.91vw, 2.063rem);
   }
 }

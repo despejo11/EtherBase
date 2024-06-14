@@ -1,4 +1,5 @@
 import HomeContent from '../ui/HomeContent/HomeContent'
+import Footer from '../ui/Footer/Footer'
 
 import { motion } from 'framer-motion'
 
@@ -10,6 +11,7 @@ export default function Home() {
       exit={{ opacity: 0 }}
     >
       <HomeContent />
+      <Footer />
     </motion.div>
   )
 }
