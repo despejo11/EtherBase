@@ -1,0 +1,192 @@
+@import '/index.scss';
+
+.content {
+  margin: auto;
+  max-width: 1200px;
+  margin-block: 100px;
+
+  .center {
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Changa One', sans-serif;
+    color: $white;
+    mix-blend-mode: difference;
+    user-select: none;
+  }
+
+  table {
+    width: 100%;
+    font-family: 'Changa One', sans-serif;
+    border-collapse: separate;
+    border-spacing: 15px;
+
+    th,
+    td {
+      padding: clamp(0.875rem, 0.739rem + 0.68vw, 1.25rem);
+      text-align: left;
+      @extend %glassEffect;
+      border: $br-c;
+      border-radius: $br-r;
+    }
+
+    thead {
+      th {
+        font-size: 23px;
+        font-weight: 400;
+        color: $white;
+      }
+    }
+
+    tbody {
+      position: relative;
+
+      .margin {
+        display: block;
+        padding-block: 5px;
+
+        @media (max-width: 1000px) {
+          display: none;
+        }
+      }
+
+      td {
+        color: $white-a;
+        font-size: 15px;
+      }
+
+      .markerCap {
+        font-size: clamp(0.563rem, 0.386rem + 0.88vw, 0.938rem);
+      }
+
+      .percentMinus {
+        color: $red;
+      }
+
+      .percentPlus {
+        color: $green;
+      }
+
+      .percentEqual {
+        color: $gray-a;
+      }
+    }
+  }
+
+  .pagination {
+    width: clamp(15rem, 11.364rem + 18.18vw, 25rem);
+    padding: clamp(0.875rem, 0.739rem + 0.68vw, 1.25rem);
+    gap: clamp(1.563rem, 1.222rem + 1.7vw, 2.5rem);
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @extend %glassEffect;
+    border: $br-c;
+    border-radius: $br-r;
+
+    span {
+      @extend %letter;
+    }
+
+    button {
+      background-color: transparent;
+      cursor: pointer;
+      color: $white;
+      transition: $tr-btn;
+      font-size: clamp(1.188rem, 0.938rem + 1.25vw, 1.875rem);
+      font-family: 'Changa One', sans-serif;
+
+      &:hover {
+        color: $white-h;
+        transform: scale(1.1);
+      }
+
+      &:active {
+        color: $white-a;
+        transform: scale(1);
+      }
+
+      @media (max-width: 1000px) {
+        &:hover {
+          color: $white;
+          transform: scale(1);
+        }
+
+        &:active {
+          color: $white;
+        }
+      }
+    }
+
+    .activeBtn {
+      color: $gray;
+      transform: scale(0.8);
+      cursor: auto;
+
+      &:hover {
+        color: $gray;
+        transform: scale(0.8);
+      }
+
+      &:active {
+        color: $gray;
+        transform: scale(0.8);
+      }
+
+      @media (max-width: 1000px) {
+        &:hover {
+          color: $gray;
+          transform: scale(0.8);
+        }
+
+        &:active {
+          color: $gray;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1000px) {
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
+      gap: 10px;
+    }
+
+    thead {
+      display: none;
+    }
+
+    tbody {
+      display: flex;
+      flex-direction: column;
+      padding-inline: 15px;
+      gap: 45px;
+
+      tr {
+        display: flex;
+        flex-direction: column;
+      }
+
+      td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:before {
+          content: attr(data-label);
+          flex-basis: 50%;
+          color: $white;
+          font-size: clamp(0.938rem, 0.732rem + 1.03vw, 1.375rem);
+        }
+      }
+    }
+  }
+}

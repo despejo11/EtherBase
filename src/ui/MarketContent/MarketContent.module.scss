@@ -1,0 +1,17 @@
+@import '/index.scss';
+
+.content {
+  padding-top: 150px;
+  background-image: url(/images/bg/main.png);
+  background-size: cover;
+
+  .titlePage {
+    @include titlePage(clamp(3.125rem, 0.17rem + 14.77vw, 11.25rem));
+  }
+}
+
+.market {
+  margin-top: 200px;
+  background-image: url(/images/bg/market.png);
+  background-size: auto;
+}

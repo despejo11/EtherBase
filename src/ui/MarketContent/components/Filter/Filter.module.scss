@@ -1,0 +1,18 @@
+@import '/index.scss';
+
+.input {
+  margin-inline: 15px;
+  margin-bottom: 40px;
+
+  @media (max-width: 1000px) {
+    margin-bottom: 60px;
+  }
+
+  padding: clamp(0.75rem, 0.682rem + 0.34vw, 0.938rem);
+  font-size: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
+  @extend %glassEffect;
+  border: $br-c;
+  border-radius: $br-r;
+  color: $white;
+  font-family: 'Changa One', sans-serif;
+}
