@@ -15,4 +15,13 @@
   border-radius: $br-r;
   color: $white;
   font-family: 'Changa One', sans-serif;
+  transition: $tr-btn;
+
+  &::placeholder {
+    color: #8a8a8aca;
+  }
+
+  &:focus {
+    border: 1.5px solid $white;
+  }
 }

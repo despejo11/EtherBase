@@ -6,5 +6,6 @@ export function useCoinData() {
   return useQuery<TCoinData[], Error>({
     queryKey: ['coinData'],
     queryFn: () => getCoinData(),
+    refetchInterval: 10000,
   })
 }

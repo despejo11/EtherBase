@@ -80,10 +80,17 @@ export default function CoinData() {
     setCurrentPage(1)
   }, [filter])
 
+  const formatPrice = (price: string | number) => {
+    const priceNumber = Number(price)
+    if (priceNumber === 0) {
+      return '$ 0.00'
+    }
+    const formattedPrice = priceNumber.toFixed(2)
+    return formattedPrice === '0.00' ? '$ ≈0.00' : `$ ${formattedPrice}`
+  }
+
   return (
     <div className={styles.content}>
-      <Filter filter={filter} onFilterChange={setFilter} />
-
       {isLoading ? (
         <div className={styles.center}>
           <l-mirage size='60' speed='2.5' color='#f4f4f4'></l-mirage>
@@ -94,6 +101,8 @@ export default function CoinData() {
         </div>
       ) : (
         <>
+          <Filter filter={filter} onFilterChange={setFilter} />
+
           <div ref={contentRef}>
             {filteredData && filteredData.length > 0 ? (
               <table>
@@ -113,9 +122,7 @@ export default function CoinData() {
                     <tr key={coin.id}>
                       <td data-label='Rank'>{coin.rank}</td>
                       <td data-label='Symbol'>{coin.symbol}</td>
-                      <td data-label='Price'>
-                        $ {Number(coin.priceUsd).toFixed(2)}
-                      </td>
+                      <td data-label='Price'>{formatPrice(coin.priceUsd)}</td>
                       <td
                         data-label='24h Change'
                         className={

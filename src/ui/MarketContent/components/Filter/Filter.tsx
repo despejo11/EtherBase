@@ -10,7 +10,7 @@ export default function Filter({ filter, onFilterChange }: TFilterProps) {
     <input
       className={styles.input}
       type='text'
-      placeholder='Enter the symbol'
+      placeholder='Search by symbol'
       autoComplete='off'
       name='text'
       value={filter}

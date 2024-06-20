@@ -40,6 +40,35 @@ header {
       }
     }
 
+    .links {
+      display: flex;
+      gap: 40px;
+
+      a {
+        @extend %link;
+        font-family: 'Changa One', sans-serif;
+        margin-bottom: 5px;
+        letter-spacing: 0.5px;
+        color: $white;
+
+        span {
+          mix-blend-mode: difference;
+        }
+
+        &:hover {
+          span {
+            transform: scale(2);
+          }
+        }
+
+        &:active {
+          span {
+            transform: scale(1.5);
+          }
+        }
+      }
+    }
+
     .icons {
       display: flex;
       gap: 20px;
